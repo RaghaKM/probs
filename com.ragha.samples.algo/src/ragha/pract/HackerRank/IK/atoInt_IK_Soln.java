@@ -1,4 +1,4 @@
-package ragha.pract.IK;
+package ragha.pract.HackerRank.IK;
 
 import java.io.*;
 import java.io.ObjectInputStream.GetField;
@@ -7,7 +7,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class atoIK_Soln {
+public class atoInt_IK_Soln {
     
 	/*
 	 * Complete the function below.
@@ -15,25 +15,29 @@ public class atoIK_Soln {
 	 */
 
 	    static int atoiIK(String str) {
-	    	char sign = 'x';
+
+	    	char sign = ')';
 	    	String intVal = "";
 	    	for(char x : str.toCharArray())//for(char x : Lists.charactersOf(str))//
 	    	{
 	    		if((x == '+' || x == '-')){ // use isSign
-	    			//(sign=='+'||sign=='-') && 
 
 	    			if((sign=='+'||sign=='-') && intVal!="")
 	    				return  Integer.parseInt(Character.toString(sign)+intVal);
 	    			else if(intVal!="") return Integer.parseInt(intVal);
-	    			else if(sign=='x') sign = x;
-	    			else sign ='x';
+	    			else sign = x;
+	    			//else sign =')';
 	    			continue;
-	    		}
-	    		
-	    		if((Character.getType(x)==9)){ // OR try to minus 0 to get the ascii value. 
+	    		}else if((Character.getType(x)==9)){ // OR try to minus 0 to get the ascii value. 
 	    			intVal = intVal+x;
+	    		}else if(intVal!="") { 
+	    				if(intVal!="" && sign!=')') return Integer.parseInt(sign+intVal);
+	    			System.out.println(sign+intVal);
+	    			return Integer.parseInt(intVal);
 	    		}
 	    	}
+	    	
+	    	if(intVal!="" && sign==')') return Integer.parseInt(intVal);
 	    	
 	    	if(intVal=="") 	return 0;
 	    	
@@ -43,9 +47,28 @@ public class atoIK_Soln {
 	    	}
 	
 	    
+	    static int atoiIK2(String str) {
+
+	    	char sign = ')';
+	    	String intVal = "";
+	    	char[] output = new char[str.length()];
+	    	for(char x : str.toCharArray())//for(char x : Lists.charactersOf(str))//
+	    	{
+
+	    	}
+	    	
+	    	if(intVal!="" && sign==')') return Integer.parseInt(intVal);
+	    	
+	    	if(intVal=="") 	return 0;
+	    	
+	    	System.out.println(sign+intVal);
+	    	
+	    	return Integer.parseInt(sign+intVal);
+	    	}  
+	    
 	    
 	    public static void main(String[] args) throws IOException{
-	       int  res = atoiIK("+a32+--42");
+	       int  res = atoiIK(")");
 	        System.out.println(res);
 	    	  /*    Scanner in = new Scanner(System.in);
 	       // final String fileName = System.getenv("OUTPUT_PATH");

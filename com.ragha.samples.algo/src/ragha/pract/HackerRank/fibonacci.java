@@ -1,4 +1,4 @@
-package ragha.pract;
+package ragha.pract.HackerRank;
 
 public class fibonacci {
 
