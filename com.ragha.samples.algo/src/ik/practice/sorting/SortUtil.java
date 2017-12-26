@@ -4,7 +4,6 @@ public class SortUtil {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 	}
 	
 	public static void print(int[] arr){
@@ -21,6 +20,4 @@ public class SortUtil {
 		arr[from] = arr[to];
 		arr[to] = temp;
 	}
-		
-
 }
