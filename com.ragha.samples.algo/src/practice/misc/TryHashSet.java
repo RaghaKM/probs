@@ -7,7 +7,6 @@ import java.util.Iterator;
 public class TryHashSet {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		HashSet<String> hs = new HashSet<String>();
 		HashMap hm = new HashMap();
@@ -19,7 +18,7 @@ public class TryHashSet {
 		hs.add("ragha");
 		hs.add("java");
 		hs.add("abc");
-		hs.add(null);
+		//hs.add(null);
 		
 		hm.put("a","a");
 		hm.put("z","z");
@@ -28,10 +27,14 @@ public class TryHashSet {
 		hm.put("abc","abc");
 		
 		for (Object entry:hs) {
-			System.out.println( (String)entry);
+			System.out.println( (String)entry+" -- " +entry.hashCode());
 			
 		}
-		
+		System.out.println("------------------------");
+		for (Object entry2:hm.keySet()) {
+			System.out.println( entry2.hashCode());
+			
+		}
 
 		Iterator it = hs.iterator();
 		

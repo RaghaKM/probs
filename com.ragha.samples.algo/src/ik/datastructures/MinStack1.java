@@ -3,17 +3,20 @@ package ik.datastructures;
 import java.util.Scanner;
 
 public class MinStack1 {
-	Node top = null;
-	int size = 0;
-	Stack minStack = new Stack();
+	public static ik.datastructures.Stack minStack = new ik.datastructures.Stack();
+	public static ik.datastructures.Stack stack = new ik.datastructures.Stack();
 	
 	public static void main(String[] args) {
 	int[] stackElements = {19,5,7,43,3,4,86,45,2,45,15,98,3,3,2};
-	MinStack1 stack = new MinStack1();
-		for (int i = 0; i < stackElements.length; i++) {
+	
+/*		for (int i = 0; i < stackElements.length; i++) {
 			stack.push(stackElements[i]);
-		}
-		
+		}*/
+		MinStack1 minStackImpl = new MinStack1();
+		minStackImpl.runMinStack();
+	}
+	
+	void runMinStack(){
 		Scanner sc = new Scanner(System.in);
 		boolean flag = true;
 		int option = 0;
@@ -22,17 +25,16 @@ public class MinStack1 {
 		stack.printStack();
 		
 		do {
-			System.out.println("Please enter the your choice: \n 1: pop. \n 2: push \n3: size \n 4: peak \n 5: isEMpty \n'10' TO EXIT");
+			System.out.println("Please enter the your choice: \n 1: pop --  2: push --  3: size --  4: peak --  5: isEMpty -- 6: min -- 7: print --  '10' TO EXIT");
 			
 			switch (sc.nextInt()) {
 			case 1:
-				Node poped = stack.pop();
-				System.out.println("Poped element : "+poped.val+" New Top element : "+((stack.top!=null)?stack.top.val:"Null"));
+				pop();
 				break;
 
 			case 2:
-				System.out.println("Please enter the element you want to insert");
-				stack.push(sc.nextInt());
+				System.out.println("Enter element to be inserted");
+				push(sc.nextInt());				
 				break;
 	
 			case 3:
@@ -46,6 +48,10 @@ public class MinStack1 {
 			case 4:
 				System.out.println("Peak element in the stack: "+stack.peak());
 				break;
+				
+			case 6:
+				System.out.println("Min element is: "+min());
+				break;	
 				
 			case 7:
 				System.out.println("==========================");
@@ -63,77 +69,24 @@ public class MinStack1 {
 		
 	}
 	
-	Node peak(){
-			return top;
+	void pop(){
+		int popedVal = stack.popedVal();
+		System.out.println("Poped element : "+ popedVal + " New Top element : "+(stack.peakVal()));
+		/*Managing Min Stack*/
+		if(popedVal==minStack.peakVal())
+				minStack.pop();	
 	}
 	
-	boolean isEmpty(){
-		return (top==null);
-	}
-	
-	int peakVal(){
-		if(top!=null)
-			return top.val;
-		return -9999;
-	}
-	
-	Node pop(){
-		if(top!=null){
-		Node temp = top;
-		top = top.next;
-		size--;
-		return temp;
-		}
-		return null;
-	}
-	
-	Node push(int value){
-		Node newTop = new Node(value);
-		/*if(top!=null){
-			newTop.next = top;
-		}*/
-		newTop.next=top;
-		top = newTop;
-		size++;
-		return top;
-	}
-	
-	void push(Node newTop){
-		newTop.next=top;
-		top=newTop;
-		size++;
-	}
-	
-	void delete(){
-		pop();
-	}
-	
-	int size(){
-		return size;
-	}
-	
-	void printStack(){
-		if(top==null){
-			System.out.println("Empty Stack");
-			return;
-		}
+	void push(int valToPush){
+		stack.push(valToPush);
 		
-		Node tempNode = top;
-	do {
-		System.out.println(tempNode.val);
-		tempNode = tempNode.next;
-	} while (tempNode!=null);
-		
+		/*Managing Min Stack*/
+		if(minStack.isEmpty() || (valToPush <= minStack.peakVal()) )
+			minStack.push(valToPush);	
 	}
 	
-	class Node{
-		int val;
-		Node next;
-		
-		Node(int value){
-			this.val = value;
-			this.next = null;			
-		}
+	int min(){
+		return minStack.peak().val;
 	}
-
+	
 }

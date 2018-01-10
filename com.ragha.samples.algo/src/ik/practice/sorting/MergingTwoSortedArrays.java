@@ -22,24 +22,24 @@ public class MergingTwoSortedArrays {
 	}
 	
 	static void mergeSortedArrays(){
-		int fElement, sElement;
+		int frmFrstArry, frmScndArry;
 		int Fi=array1.length-1,Sj = array1.length-1;
 		//int index2 = array2.length-1;
 		for (int i = array2.length - 1; i >= 0 ; i--) {
 
-			if(Fi<0) fElement = Integer.MIN_VALUE;
-			else fElement = array1[Fi];
+			if(Fi<0) frmFrstArry = Integer.MIN_VALUE;
+			else frmFrstArry = array1[Fi];
 			
-			if(Sj<0) sElement = Integer.MIN_VALUE;
-			else sElement = array2[Sj];
+			if(Sj<0) frmScndArry = Integer.MIN_VALUE;
+			else frmScndArry = array2[Sj];
 			
-			if(fElement > sElement)
+			if(frmFrstArry > frmScndArry)
 			{
-				array2[i] = fElement;
+				array2[i] = frmFrstArry;
 				Fi--;
 			}
 			else{
-				array2[i] = sElement;
+				array2[i] = frmScndArry;
 				Sj--;
 			}
 		}

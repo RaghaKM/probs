@@ -23,7 +23,7 @@ public class Stack {
 		stack.printStack();
 		
 		do {
-			System.out.println("Please enter the your choice: \n 1: pop. \n 2: push \n3: size \n 4: peak \n 5: isEMpty \n'10' TO EXIT");
+			System.out.println("Please enter the your choice: \n 1: pop --  2: push --  3: size --  4: peak --  5: isEMpty -- 6: min -- 7: print --  '10' TO EXIT");
 			
 			switch (sc.nextInt()) {
 			case 1:
@@ -86,6 +86,13 @@ public class Stack {
 		return temp;
 		}
 		return null;
+	}
+	
+	int popedVal(){
+		Node poped = pop();
+		if(poped==null) return -9999;
+		
+		return poped.val;
 	}
 	
 	Node push(int value){

@@ -1,6 +1,6 @@
-package IK.datastructures;
+package ik.datastructures;
 
-public class ReverseAList {
+public class DLL {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -8,16 +8,16 @@ public class QuickSorting {
 		// TODO Auto-generated method stub
 		//int[] arr = {2,10,-5,7,3,11,40,9};
 		//int[] arr = {1,3,4,2,9,6,5,11,3,2};
-		//int[] arr = {1,3,2,9,6,7,8,5,9,3};
-		int[] arr = {13,1,2,3,4,5,6,7,8,9,10,11,12};
+		int[] arr = {1,3,2,9,6,7,8,5,9,3};
+		//int[] arr = {13,1,2,3,4,5,6,7,8,9,10,11,12};
 		//int[] arr = {12,11,10,9,8,7,6,5,4,3,2,1};
 		//int[] arr = {1,4,2,9,6,5,11,3};
 		//int[] arr = {12,3,7,8,2};
 		
 		SortUtil.print(arr);
 
-		//QuickSorting.quickSort(arr,0,arr.length-1);
-		QuickSorting.revSort(arr,0,arr.length-1);
+		QuickSorting.quickSort(arr,0,arr.length-1);
+		//QuickSorting.revSort(arr,0,arr.length-1);
 		SortUtil.print(arr);
 
 	}
@@ -52,13 +52,13 @@ public class QuickSorting {
 		int right = end;
 		
 		while(left < right){
-			while((left < array.length) && (array[left] < array[pivot]) ) left++;
-			while( (right > 0) && (array[right] > array[pivot]) ) right--;
+			while((left < end) && (array[left] < array[pivot]) ) left++;  // I had also used (left < array[length]) which also will work since left will not go beyond end/right point
+			while( (right > start) && (array[right] > array[pivot]) ) right--; // I had also used (right > 0) which also will obviously work
 			
 			if(left<right) SortUtil.swap(array,left,right);
 		}
-		if(array[right] < array[start])
-			SortUtil.swap(array,start,right);
+		if(array[right] < array[pivot])
+			SortUtil.swap(array,pivot,right);
 		//System.out.print("Pivot "+pivot+" -- "+"start "+start+" -- "+"End "+end+" -- ");
 		SortUtil.print(array);
 		return right; 
@@ -88,8 +88,8 @@ public class QuickSorting {
 			
 			if(left < right) SortUtil.swap(array,left,right);
 		}
-		if(array[right] > array[start])
-			SortUtil.swap(array,start,right);
+		if(array[right] > array[pivot])
+			SortUtil.swap(array,pivot,right);
 		//System.out.print("Pivot "+pivot+" -- "+"start "+start+" -- "+"End "+end+" -- ");
 		SortUtil.print(array);
 		return right; 

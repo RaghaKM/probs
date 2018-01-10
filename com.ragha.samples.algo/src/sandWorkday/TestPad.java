@@ -1,5 +1,10 @@
 package sandWorkday;
 
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+import org.w3c.dom.Node;
+
 public class TestPad {
 
 	public static void main(String[] args) {
@@ -8,18 +13,21 @@ public class TestPad {
 	System.out.println("-- "+255444123%1000);
 	  String[] thousands = {"", "Thousand", "Million", "Billion"};
 	
+	  TreeSet<String> tSet = new TreeSet<String>();
+	  //tSet.
+	  TreeMap<String, Node>  treeMap;
+	  
 	int i = 1;
 	int num=100;
 	String word;
-	while(num>0){
-		
-		if(num%1000 != 0) {
-			String second = inword(num%1000);
-		}
-		
-		num = num/1000;
-		i++;
-	}
 	
-	}
+	int[] queue = new int[10];
+	int front,rear;
+	front=1;
+	front=rear=-2;
+	
+	System.out.println(front);
+	System.out.println(rear);
+	System.out.println(((front+queue.length)-1)%queue.length==rear);
+	}//end of main
 }
