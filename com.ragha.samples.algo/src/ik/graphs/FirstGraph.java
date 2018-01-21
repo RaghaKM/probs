@@ -11,7 +11,7 @@ public class FirstGraph {
 	
 	int vertex; 
 	int edge;
-	Hashmap adjVertices = new HashMap<K, V>();
+	HashMap adjVertices = new HashMap<Integer, Integer>();
 	
 	//In this the vertex could visit more than once
 	void bfs(int vertex){

@@ -1,6 +1,6 @@
 package sandWorkday;
 
-import ik.practice.sorting.SortUtil;
+import ik.sorting.SortUtil;
 
 import java.awt.print.Printable;
 

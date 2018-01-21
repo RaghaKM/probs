@@ -1,7 +1,7 @@
-package ik.practice.sorting;
+package ik.sorting;
 
-import ik.practice.sorting.QuickSort_v2;
-import ik.practice.sorting.SortUtil;
+import ik.sorting.QuickSort_v2;
+import ik.sorting.SortUtil;
 
 public class QuickSorting {
 

@@ -1,6 +1,6 @@
 package interviewKickstart.sorting;
 
-import ik.practice.sorting.SortUtil;
+import ik.sorting.SortUtil;
 
 public class QuickSorting {
 

@@ -1,4 +1,4 @@
-package ik.practice.sorting;
+package ik.sorting;
 
 public class MergingTwoSortedArrays {
 

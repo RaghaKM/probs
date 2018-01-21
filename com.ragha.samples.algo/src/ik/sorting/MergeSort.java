@@ -1,10 +1,9 @@
-package ik.practice.sorting;
+package ik.sorting;
 
 public class MergeSort {
 static int[] array = {12,11,10,9,8,7,6,5,4,3,2,1};
 static int[] array2 = {1,3,4,2,9,6,5,11,3,2};
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		SortUtil.print(array);
 		mergeSort(0,array.length-1);
 		SortUtil.print(array);
