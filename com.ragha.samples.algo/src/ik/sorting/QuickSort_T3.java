@@ -27,9 +27,9 @@ public class QuickSort_T3 {
 	}
 	
 	public static int partition(int[] arr, int start, int end){
-		int left = 0 ;// (start+end)/2;
+		int left = 0; //left = 0 ;// 
 		int right = end;
-		int pivot = start;
+		int pivot = (start+end)/2;
 		
 		while(left<right){
 			while(arr[left]<arr[pivot] && left < end) left++;

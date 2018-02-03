@@ -1,4 +1,4 @@
-package ik.sorting;
+package ik.sorting.heap;
 //http://www.sanfoundry.com/java-program-implement-heap-sort/
 import java.util.Scanner;
 

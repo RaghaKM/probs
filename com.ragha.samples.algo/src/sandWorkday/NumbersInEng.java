@@ -29,7 +29,6 @@ public class NumbersInEng {
 	}
 	
 	String inWords(int num){
-		String finalWords;
 		
 		if(num == 0) return "";
 		if(num <= 20) return lessThanTwenty[num];

@@ -1,6 +1,6 @@
-package ik.sorting;
+package ik.sorting.heap;
 
-public class HeapSort_Min {
+public class HeapSort_Max {
 	public static int arr[] = {12, 11, 13, 5, 6, 7,10};
 	public static void main(String[] args) {
 		  printArray(arr);
@@ -11,7 +11,7 @@ public class HeapSort_Min {
 	 static void printArray(int arr[])
 	 {
 	     int n = arr.length;
-	     for (int i=0; i<n; ++i)
+	     for (int i=0; i<n; i++)
 	         System.out.print(arr[i]+" ");
 	     System.out.println();
 	 }
@@ -34,31 +34,37 @@ public class HeapSort_Min {
 	
 	public static void heapify(int i,int n){
 		int l = 2*i+1;
+			
 		int r = 2*i+2;
-		// This commented section will do the same as the rest of this method
-		/*int min = min(i,l,r);
-		if(min!=i){
-			swap(i,min);
-			heapify(min);
-		}
-		//In other words its swap(i,min(i,l,r))
-		*/
 		
-		int min = i;
+/*			if(l>=n) l = -1;
+			if(r>=n) r = -1;
+			
+		// This commented section will do the same as the rest of this method
+		int max = max(i,l,r);
+		System.out.println("i "+i+"  l: "+l+"  r: "+r);
+		if(max!=i){
+			swap(i,max);
+			heapify(max,n);
+		}*/
+		//In other words its swap(i,min(i,l,r))
+	
+		
+		int max = i;
 		
 		System.out.println("i "+i+"  l: "+l+"  r: "+r);
 		
-		if(r < n && arr[r]<arr[min]) {
-			min = r;
+		if(r < n && arr[r]>arr[max]) {
+			max = r;
 		}
 		
-		if(l < n && arr[l]<arr[min]) {
-			min = l;
+		if(l < n && arr[l]>arr[max]) {
+			max = l;
 		}
 		
-		if(min!=i){
-			swap(i,min);
-			heapify(min,n);
+		if(max!=i){
+			swap(i,max);
+			heapify(max,n);
 		}
 	}
 	
@@ -68,8 +74,8 @@ public class HeapSort_Min {
 		arr[r] = temp;
 	}
 	
-	public static int min(int a, int b, int c){
-		return Math.min(a, Math.min(b, c));
+	public static int max(int a, int b, int c){
+		return Math.max(arr[a], Math.max(arr[b], arr[c]));
 	}
 	
 }

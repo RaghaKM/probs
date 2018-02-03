@@ -37,24 +37,24 @@ public class QuickSort_v2 {
 		//System.out.println("--Left-- "+start+"---Right- "+end);
 		int left = start;
 		int pivot = (start+end)/2;
+		pivot = arr[pivot];
 		int rt = end;
 		
-		while(left< rt){
+		while(left<= rt){
 			//This will end up comparing all the way 
 			//while((left < arr.length-1) && (arr[left] < arr[pivot] )) left++;
 			//while((left < arr.length-1) && (arr[left] < arr[pivot] )) left++;
-			while((arr[left] < arr[pivot] ) ) left++; 
-			//while( (rt > 0) && (arr[rt] > arr[pivot])) rt--;
-			while((arr[rt] > arr[pivot]) ) rt--;
+			while((arr[left] <= pivot ) ) left++; 
+			while((arr[rt] > pivot) ) rt--;
 			
 			if(left < rt  ) SortUtil.swap(arr, left, rt);
 			//System.out.println("Pivot : "+pivot);
 			System.out.println(Arrays.toString(arr));
 		}
 		
-		if(arr[rt] < arr[pivot]){  
+		if(arr[rt] < pivot){  
 			//System.out.println("---- "+pivot+"--Left-- "+left+"---Right- "+rt);
-			SortUtil.swap(arr, rt, pivot);
+			//SortUtil.swap(arr, rt, pivot);
 		}
 		//SortUtil.swap(arr, rt, pivot);
 		

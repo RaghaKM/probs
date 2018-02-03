@@ -1,4 +1,4 @@
-package ik.sorting;
+package ik.sorting.heap;
 	/*
 	https://www.geeksforgeeks.org/heap-sort/
 	The link also has pictorial and vido explanation which can be used for quick glance
