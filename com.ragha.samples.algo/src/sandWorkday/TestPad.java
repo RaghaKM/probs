@@ -32,8 +32,6 @@ public class TestPad {
 	System.out.println(rear);
 	System.out.println(((front+queue.length)-1)%queue.length==rear);*/
 	
-	
-	
 		//String ragha = "ragha";
 	//System.out.println(ragha.length()+"--1 to 3 --"+ragha.substring(1, 5)+" -2- "+ragha.charAt(4));
 	String str = "aqW9ertyzBs11ertyzBBsss";

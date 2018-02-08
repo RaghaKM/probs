@@ -8,7 +8,7 @@
  *  
  ******************************************************************************/
 
-package ik.graphs;
+package ik.graphs.OnlineStuff;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

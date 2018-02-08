@@ -7,7 +7,7 @@
  *
  ******************************************************************************/
 
-package ik.graphs;
+package ik.graphs.OnlineStuff;
 /**
  *  The {@code DirectedEdge} class represents a weighted edge in an 
  *  {@link EdgeWeightedDigraph}. Each edge consists of two integers
