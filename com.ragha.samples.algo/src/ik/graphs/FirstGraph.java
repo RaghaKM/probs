@@ -49,10 +49,5 @@ public class FirstGraph {
 		for(n in v.neighbours)
 			depthFS(n,visited);
 	}
-	
 
-	
-	
-	
-	
 }

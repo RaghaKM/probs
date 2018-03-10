@@ -1,4 +1,4 @@
-package ik.practice.sorting.intQs;
+package ik.sorting.intQs;
 
 public class SetIsSubset {
 

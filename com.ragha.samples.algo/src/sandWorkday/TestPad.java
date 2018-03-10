@@ -40,29 +40,53 @@ public class TestPad {
 	/*int[][] arr = {{1,2},{3,4}};
 	System.out.println(" First : "+arr[0][0]+" Second : "+arr[0][1]);*/
 	
-/*	  int[][] arr = {{1, 3, 5, 7},{1, 3, 5, 7},{1, 3, 5, 7}};
+  int[][] arr = {{1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12},{13, 14, 15, 16}};
 	  System.out.println(arr.length);
-	  System.out.println("One "+Arrays.toString(arr));*/
+	  System.out.println(arr[0].length);
+	  System.out.println("One "+Arrays.toString(arr));
 	
-/*	ArrayList<Integer> list = new ArrayList<Integer>();
-	list.add(1);
-	list.add(2);
-	list.add(3);
-	list.add(3, 4);
-	list.add(0, 0);
-	//System.out.println("--"+Arrays);
-	System.out.println(list.get(3));*/
-	
+	  
+	  System.out.println("======================");
+	  
+	  for (int i = 0; i < arr[0].length; i++) {
+		for (int j = 0; j < arr.length; j++) {
+			System.out.print(arr[j][i]+"\t");
+		}
+		System.out.println();
+	}
+	  
+	  System.out.println("======================");
+	  
+	//printArrayList();
 
-int i=0;
-	    for(int letter= ' ';letter<274;letter++){
-	    	System.out.println(i+"--"+letter+"--"+(char)letter);
-	    	i++;
-	    }
+	//printAscii();    
 	
-	    for (int c=32; c<128; c++) {
-	        System.out.println(c + ": " + (char)c);
-	       } 
-	    
 	}//end of main
+	
+	
+	public static void printArrayList(){
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(3, 4);
+		list.add(0, 0);
+		System.out.println("--"+Arrays.toString(list.toArray()));
+		System.out.println(list.get(3));
+	}
+	
+	public static void printAscii(){
+		//PRINTING all ASCII characters
+	
+		int i=0;
+			    for(int letter= ' ';letter<274;letter++){
+			    	System.out.println(i+"--"+letter+"--"+(char)letter);
+			    	i++;
+			    }
+			
+			    for (int c=32; c<128; c++) {
+			        System.out.println(c + ": " + (char)c);
+			       } 
+	}
+	
 }

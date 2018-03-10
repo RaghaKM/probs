@@ -1,36 +1,33 @@
 package ik.graphs;
 
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 import java.util.Vector;
 
-import javax.jws.Oneway;
-
 public class TestGraph {
-
+	static GraphNode dest; 
 	public static void main(String[] args) {
 		
 		GraphNode rootNode = createGraph();
 		HashSet<GraphNode> visited = new HashSet<GraphNode>();
 	
 		System.out.println("B FS");
-		bfs(rootNode,visited);
+		//bfs(rootNode,visited);
 		System.out.println("========================");
 		visited.clear(); // Clean visited before using in DFS
 		System.out.println("D FS (Recurssion)");
-		dfsRecur(rootNode,visited);
+		//dfsRecur(rootNode,visited);
 		System.out.println("========================");
 		visited.clear();
 		System.out.println("D FS");
-		dfs(rootNode,visited);
+		//dfs(rootNode,visited);
 		System.out.println("========================");
 	}
 
-	public static void bfs(GraphNode rootNode,HashSet<GraphNode> visited){
+/*	public static void bfs(GraphNode rootNode,HashSet<GraphNode> visited){
 		if(rootNode==null || visited.contains(rootNode)) return;
 		GraphNode currNode;
 		Queue<GraphNode> queue = new LinkedList<TestGraph.GraphNode>();
@@ -49,9 +46,9 @@ public class TestGraph {
 		}
 		
 		}
-	}	
+	}	*/
 	
-	public static void dfsRecur(GraphNode rootNode,HashSet<GraphNode> visited){
+/*	public static void dfsRecur(GraphNode rootNode,HashSet<GraphNode> visited){
 		
 		if(rootNode==null || visited.contains(rootNode)) return;
 		
@@ -79,7 +76,7 @@ public class TestGraph {
 			}
 		}
 	  }
-	}
+	}*/
 	
 	public static GraphNode createGraph(){
 		
@@ -105,7 +102,7 @@ public class TestGraph {
 		nodeThree.neighbor.add(nodeOne);nodeThree.neighbor.add(nodeFour); // 3's
 		nodeFour.neighbor.add(nodeFive);nodeFour.neighbor.add(nodeThree);nodeFour.neighbor.add(nodeTwo); // 4's
 		nodeFive.neighbor.add(nodeFour); // 5's
-		
+		dest = nodeFive; // Added this variable to be able to test shortest path
 		//return rootNode;
 		return nodeOne;// Assuming nodeOne is root node right now.
 	}
@@ -132,11 +129,27 @@ public class TestGraph {
 		@Override
 		public int compare(GraphNode g1, GraphNode g2) {
 			if(g1!=null && g2!=null){
-				if(g1.val==g2.val) return 0;
+				/*if(g1.val==g2.val) return 0;
 				else if(g1.val > g2.val) return 10;
-				else return -10;
+				else return -10;*/
+				return g1.val - g2.val;
 			}
 			return -9999;
+		}
+		
+		@Override
+		public boolean equals(Object obj){
+			return  this.val==((GraphNode)obj).val;			
+		}
+		
+		@Override
+		public int hashCode(){
+			return this.val;			
+		}
+		
+		
+		public String toString(){
+			return this.val+" : "+this.neighbor.size();
 		}
 	}
 }

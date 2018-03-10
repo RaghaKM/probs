@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MergeKSortedArrays {
@@ -59,6 +60,7 @@ public static void main(String[] args) throws IOException {
         arr_cols = Integer.parseInt(in.nextLine().trim());
         int[][] arr = new int[arr_rows][arr_cols];*/
         int[][] arr = {{1, 3, 5, 7},{2, 4, 6, 8},{0, 9, 11, 12}};
+       // int[][] arr = { { 26, -15, -20 }, { 27, 19, -18 } };
         
        /* for(int arr_i = 0; arr_i < arr_rows; arr_i++) {
             for(int arr_j = 0; arr_j < arr_cols; arr_j++) {
@@ -69,6 +71,7 @@ public static void main(String[] args) throws IOException {
           in.nextLine();
         }*/
         res = mergeArrays(arr);
+        System.out.println(Arrays.toString(res));
         for(int res_i = 0; res_i < res.length; res_i++) {
             bw.write(String.valueOf(res[res_i]));
             bw.newLine();
